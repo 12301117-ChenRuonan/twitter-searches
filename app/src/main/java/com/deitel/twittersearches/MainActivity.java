@@ -123,29 +123,27 @@ public class MainActivity extends ListActivity
          Collections.sort(tags, String.CASE_INSENSITIVE_ORDER);
          adapter.notifyDataSetChanged(); // rebind tags to ListView
       }
-   } 
-   
+   }
+
    // itemClickListener launches a web browser to display search results
-   OnItemClickListener itemClickListener = new OnItemClickListener() 
+   OnItemClickListener itemClickListener = new OnItemClickListener()
    {
       @Override
-      public void onItemClick(AdapterView<?> parent, View view, 
-         int position, long id) 
+      public void onItemClick(AdapterView<?> parent, View view,
+         int position, long id)
       {
          // get query string and create a URL representing the search
          String tag = ((TextView) view).getText().toString();
-         String urlString = getString(R.string.searchURL) +
-            Uri.encode(savedSearches.getString(tag, ""), "UTF-8");
-         
-         // create an Intent to launch a web browser    
-         Intent webIntent = new Intent(Intent.ACTION_VIEW, 
-            Uri.parse(urlString));                      
+         String urlString =Uri.encode(savedSearches.getString(tag, ""), "UTF-8");
+         // create an Intent to launch a web browser
+         Intent webIntent = new Intent(Intent.ACTION_VIEW,
+            Uri.parse(urlString));
 
          startActivity(webIntent); // launches web browser to view results
-      } 
+      }
    }; // end itemClickListener declaration
-   
-   // itemLongClickListener displays a dialog allowing the user to delete 
+
+   // itemLongClickListener displays a dialog allowing the user to delete
    // or edit a saved search
    OnItemLongClickListener itemLongClickListener = 
       new OnItemLongClickListener()
@@ -214,8 +212,7 @@ public class MainActivity extends ListActivity
    private void shareSearch(String tag)
    {
       // create the URL representing the search
-      String urlString = getString(R.string.searchURL) +
-         Uri.encode(savedSearches.getString(tag, ""), "UTF-8");
+      String urlString = Uri.encode(savedSearches.getString(tag, ""), "UTF-8");
 
       // create Intent to share urlString
       Intent shareIntent = new Intent();
