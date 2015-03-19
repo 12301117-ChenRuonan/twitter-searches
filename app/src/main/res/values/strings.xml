@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="app_name">My Favorite websites</string>
+    <string name="searchURL">http://</string>
 	<string name="tagPrompt">Tag your website</string>
 	<string name="queryPrompt">Enter full URL of websites here</string>
 	<string name="taggedSearches">Tagged website</string>
