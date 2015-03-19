@@ -219,6 +219,7 @@ public class MainActivity extends ListActivity
       // create Intent to share urlString
       Intent shareIntent = new Intent();
       shareIntent.setAction(Intent.ACTION_SEND);
+       
       shareIntent.putExtra(Intent.EXTRA_SUBJECT, 
          getString(R.string.shareSubject));
       shareIntent.putExtra(Intent.EXTRA_TEXT, 
